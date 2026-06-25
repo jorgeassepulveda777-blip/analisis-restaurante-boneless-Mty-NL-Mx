@@ -1,71 +1,176 @@
-
 # Proyecto: Ubicación óptima para un restaurante de boneless en Monterrey, Nuevo León, México
 
-## 1. Pregunta Principal del Proyecto
-¿Qué zona del municipio de Monterrey presenta mayor potencial para abrir un restaurante de boneless rentable, considerando factores como la afluencia de personas, la competencia y el nivel socioeconómico?
+---
 
+## 1. Pregunta Principal del Proyecto
+
+¿Qué zona del municipio de Monterrey presenta mayor potencial para abrir un restaurante de boneless rentable, considerando factores como:
+
+- Afluencia de personas  
+- Competencia  
+- Nivel socioeconómico  
 
 ---
 
 ## 2. Justificación de la Pregunta
 
 ### 2.1 Importancia crítica de la ubicación
-La pregunta se formula considerando estos tres factores debido a que la ubicación representa uno de los elementos más determinantes para el éxito de un restaurante. Diversos análisis dentro de la industria gastronómica coinciden en que la elección de un buen lugar puede definir la rentabilidad y permanencia del negocio.
 
-Sin el uso de datos, la elección de ubicación se basa en suposiciones, lo que incrementa el riesgo operativo y financiero. Un restaurante solo puede ser rentable si existe un flujo constante de clientes, por lo tanto, el análisis de datos permite transformar una decisión intuitiva en una estrategia medible y fundamentada.
+La ubicación es uno de los factores más determinantes para el éxito de un restaurante. Diversos análisis dentro de la industria gastronómica coinciden en que elegir un buen lugar impacta directamente en la rentabilidad y permanencia del negocio.
+
+Sin el uso de datos, esta decisión se basa en suposiciones, lo que incrementa el riesgo operativo y financiero.  
+El análisis de datos permite transformar una decisión intuitiva en una estrategia medible y fundamentada.
 
 ---
 
 ### 2.2 Justificación de los factores seleccionados
-Los factores elegidos (afluencia, competencia y nivel socioeconómico) están respaldados por metodologías de análisis utilizadas en inteligencia de negocios y Big Data, las cuales permiten comprender el comportamiento del mercado, identificar oportunidades y optimizar la toma de decisiones.
 
-La concentración geográfica de clientes y negocios existentes permite detectar zonas con demanda insatisfecha o sobreoferta, lo cual es clave para evaluar la viabilidad de un nuevo restaurante.
+Los factores elegidos (afluencia, competencia y nivel socioeconómico) están respaldados por metodologías de análisis utilizadas en inteligencia de negocios.
+
+La concentración geográfica de clientes y negocios permite identificar:
+
+- Zonas con alta demanda  
+- Zonas saturadas  
+- Oportunidades de mercado  
 
 ---
 
 ## 3. Importancia de cada factor
 
-### 3.1 Factor 1: Afluencia (demanda o flujo de personas)
-El flujo de personas determina el tamaño del mercado disponible en una zona. Un restaurante depende de la cantidad de clientes potenciales que transitan o residen cerca del establecimiento.
+### 3.1 Afluencia (demanda o flujo de personas)
 
-En términos operativos, la mayoría de los restaurantes generan entre el 70% y 80% de sus ingresos de clientes ubicados dentro de un radio cercano. Para mantener un restaurante de nivel medio se requiere una base constante de clientes, lo cual implica una población suficiente en el área.
+El flujo de personas determina el tamaño del mercado disponible.
 
-**Conclusión:** Sin afluencia de personas, no existe demanda suficiente; sin demanda, no hay rentabilidad.
+La mayoría de los restaurantes generan entre el 70% y 80% de sus ingresos de clientes cercanos.
 
----
-
-### 3.2 Factor 2: Competencia
-La competencia representa la cantidad de establecimientos similares que compiten por los mismos clientes dentro de una zona.
-
-Una alta competencia puede reducir la participación de mercado disponible, mientras que una baja competencia puede indicar una oportunidad o una falta de demanda. Además, los competidores establecen estándares de precio, calidad y servicio que deben considerarse al ingresar al mercado.
-
-**Conclusión:** A mayor competencia directa, menor es la cuota de mercado disponible y el potencial de rentabilidad.
+Conclusión:  
+Sin afluencia, no existe demanda suficiente.
 
 ---
 
-### 3.3 Factor 3: Nivel socioeconómico
-El nivel socioeconómico influye directamente en la capacidad de consumo de los clientes y en el tipo de restaurante viable en una zona.
+### 3.2 Competencia
 
-El ticket promedio que un cliente está dispuesto a pagar depende de su nivel de ingresos. Para un restaurante de boneless, que pertenece al segmento casual, es necesario identificar zonas con ingresos medios o medio-altos que permitan sostener el modelo de negocio.
+La competencia representa la cantidad de negocios similares en una zona.
 
-**Conclusión:** El nivel socioeconómico determina la capacidad de pago del mercado y, por lo tanto, la viabilidad económica del restaurante.
+- Alta competencia → menor participación de mercado  
+- Baja competencia → puede indicar oportunidad o baja demanda  
+
+Conclusión:  
+A mayor competencia, menor potencial de rentabilidad.
 
 ---
 
-## 4. Análisis integral de los factores
+### 3.3 Nivel socioeconómico
 
-Los factores seleccionados deben ser analizados en conjunto, ya que de manera individual no son suficientes para determinar el éxito del negocio.
+El nivel socioeconómico define la capacidad de consumo de los clientes.
 
-- Alta afluencia sin capacidad de pago limita el ingreso potencial.
-- Alta capacidad de pago sin flujo reduce el número de clientes.
-- Alta competencia disminuye la participación de mercado disponible.
+Para un restaurante de boneless (segmento casual), se requieren zonas con niveles:
 
-El análisis integral permite reducir la incertidumbre al tomar decisiones, validar la viabilidad del modelo de negocio y minimizar el riesgo financiero al abrir un nuevo punto de venta.
+- Medio  
+- Medio-alto  
+
+Conclusión:  
+El nivel socioeconómico determina la viabilidad económica del negocio.
+
+---
+
+## 4. Análisis integral
+
+Los factores deben analizarse en conjunto:
+
+- Alta afluencia sin ingreso → bajo consumo  
+- Alto ingreso sin flujo → pocos clientes  
+- Alta competencia → menor participación  
+
+El análisis conjunto reduce el riesgo y mejora la toma de decisiones.
 
 ---
 
 ## 5. Conclusión
 
-El uso combinado de afluencia, competencia y nivel socioeconómico permite construir un modelo analítico que transforma la selección de ubicación de un proceso intuitivo a uno basado en datos.
+El uso combinado de los factores permite transformar la selección de ubicación en un proceso basado en datos.
 
-Este enfoque incrementa la probabilidad de éxito del restaurante, al fundamentar la decisión en variables medibles y relevantes para el mercado objetivo.
+---
+
+## 6. Análisis de Nivel Socioeconómico (ETL)
+
+Este proyecto incorpora datos reales de nivel socioeconómico mediante un proceso ETL.
+
+---
+
+
+## 6.1 Fuente de datos
+
+Datos obtenidos de:
+
+https://www.amai.org/NSE/index.php?queVeo=NSEDES  
+
+Basados en:
+- INEGI (ENIGH + Censo 2020)  
+- Modelos de clasificación socioeconómica  
+
+Nivel de detalle:
+- Municipio  
+- Localidad  
+- AGEB  
+
+images/FuenteNSE.png
+
+---
+
+## 6.2 Flujo de trabajo (ETL)
+
+### Extract (Obtención)
+
+Datos descargados en formato Shapefile:
+
+- .shp → geometría  
+- .dbf → atributos  
+- .shx → índice  
+
+---
+
+### Transform (Python)
+
+Se extrajeron los datos del archivo .dbf y se convirtieron a formato CSV utilizando Python.
+
+images/transformadorNSE.png
+
+Resultado:
+- Conversión de DBF a CSV  
+- Preparación de datos para análisis en Power BI  
+
+---
+
+### Load (Power BI)
+
+El archivo CSV fue importado en Power BI para su análisis.
+
+---
+
+### Transform (Power BI / Power Query)
+
+En Power BI se realizó la limpieza y transformación de datos, incluyendo:
+
+- Eliminación de valores nulos  
+- Corrección de tipos de datos  
+- Estandarización de nombres  
+- Selección de variables relevantes  
+
+
+Resultado:
+- Dataset limpio y estructurado para análisis  
+
+---
+
+## 7. Visualización preliminar en Power BI
+
+Como resultado del proceso de limpieza y transformación de datos, se generaron visualizaciones iniciales para explorar el nivel socioeconómico por municipio.
+
+### Distribución del nivel socioeconómico por municipio
+
+images/PBI_NSE.png
+
+Esta visualización muestra la distribución de los niveles socioeconómicos por municipio, permitiendo identificar las zonas con mayor presencia de niveles medios y altos, lo cual es clave para evaluar el potencial de consumo en el análisis de ubicación del restaurante.
+
+
