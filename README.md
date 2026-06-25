@@ -114,7 +114,7 @@ Nivel de detalle:
 - Localidad  
 - AGEB  
 
-images/FuenteNSE.png
+![Pagina fuente de NSE](images/FuenteNSE.png)
 
 ---
 
@@ -134,7 +134,7 @@ Datos descargados en formato Shapefile:
 
 Se extrajeron los datos del archivo .dbf y se convirtieron a formato CSV utilizando Python.
 
-images/transformadorNSE.png
+![codigodbf a csv](images/transformadorNSE.png)
 
 Resultado:
 - Conversión de DBF a CSV  
@@ -169,7 +169,7 @@ Como resultado del proceso de limpieza y transformación de datos, se generaron 
 
 ### Distribución del nivel socioeconómico por municipio
 
-images/PBI_NSE.png
+![Distribución del nivel socioeconómico](images/PBI_NSE.png)
 
 Esta visualización muestra la distribución de los niveles socioeconómicos por municipio, permitiendo identificar las zonas con mayor presencia de niveles medios y altos, lo cual es clave para evaluar el potencial de consumo en el análisis de ubicación del restaurante.
 
