@@ -345,86 +345,18 @@ Las variables utilizadas fueron:
 
 ### Transform (Selección de POI)
 
-La base original del DENUE contiene miles de actividades económicas con distintos niveles de relevancia para el análisis.
-
-Debido a que el objetivo del proyecto es identificar zonas con potencial para la apertura de un restaurante de boneless, se seleccionaron únicamente aquellas actividades consideradas generadoras de "afluencia" potencial.
-
-![seleccion para POI](images/seleccion_var_POI.png)
-
-La selección fue realizada utilizando los códigos SCIAN de cada establecimiento.
-
-Las categorías consideradas fueron:
-
-**PENDIENTE**
-
-**Resultado:**
-
-- Dataset conformado exclusivamente por establecimientos relevantes para el análisis.
+Como etapa previa a la asignación de ponderaciones, los datos del DENUE fueron procesados en Power Query para depurar registros y extraer una tabla de referencia compuesta por los códigos SCIAN y sus respectivas actividades económicas.
 
 
----
+Esta tabla permitió identificar y separar las actividades presentes en la base de datos, facilitando su análisis posterior.
 
-### Transform (Ponderación de POI)
-
-Una vez identificados los establecimientos relevantes, se implementó una metodología de **Ponderación de Puntos de Interés (POI Weighting)**.
-
-Cada categoría recibió una puntuación relativa basada en su capacidad estimada para atraer y concentrar población con potencial de consumo.
-
-
-Estos valores representan un nivel de influencia relativo dentro del modelo y no una cantidad absoluta de personas.
-
-Como resultado de este proceso, cada establecimiento obtuvo un valor de influencia asociado a su categoría económica.
-
-**Resultado:**
-
-- Asignación de un peso de influencia a cada POI seleccionado.
-
-images/PonderacionPOI.png
-
----
-
-### Transform (Agregación por AGEB)
-
-Posteriormente, los establecimientos fueron agrupados utilizando la clave AGEB.
-
-Para cada AGEB se calculó un **Índice de Influencia Comercial** mediante la suma de los pesos de todos los POI localizados dentro de la zona.
-
-La fórmula utilizada fue:
-
-Índice de Influencia Comercial AGEB =
-Σ(Peso de cada POI ubicado en la AGEB)
-
+![seleccion para POIPQ1](images/Sel_Tab_pesoCatP1.png)
+![seleccion para POIPQ2](images/Sel_Tab_PesoCatP2.png)
 
 
 **Resultado:**
 
-- Generación de un score de influencia comercial para cada AGEB.
 
----
+- Generación de una tabla depurada de actividades económicas basada en códigos SCIAN, utilizada como base para la selección y ponderación de los POI del análisis.
 
-### Load (Power BI)
-
-Los resultados fueron cargados en Power BI para su visualización y análisis.
-
-Posteriormente se realizaron:
-**PENDIENTE**
-- Tablas comparativas entre AGEB
-- Mapas geográficos
-- Ranking de zonas
-- Integración con datos de nivel socioeconómico AMAI
-
-**Resultado:**
-
-- Dataset consolidado para el análisis de potencial comercial.
-
----
-
-## Resultado del proceso
-
-El proceso ETL permitió transformar miles de establecimientos económicos del DENUE en un indicador cuantitativo de "afluencia" potencial.
-
-Mediante la selección, ponderación y agregación de Puntos de Interés (POI) se construyó un Índice de Influencia Comercial por AGEB.
-
-Este índice no representa una medición directa del flujo peatonal real, sino una estimación de la "afluencia" potencial generada por la presencia de establecimientos capaces de atraer y concentrar población dentro de una zona geográfica determinada.
-
-El Índice de Influencia Comercial será utilizado posteriormente junto con las variables de nivel socioeconómico para identificar las zonas con mayor potencial para la apertura de un restaurante de boneless.
+⚙️🔧 **Proyecto en construcción:** El desarrollo de este proyecto continúa en progreso y algunas funcionalidades, análisis y visualizaciones aún se encuentran en implementación.
