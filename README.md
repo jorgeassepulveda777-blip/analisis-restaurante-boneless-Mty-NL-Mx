@@ -3,16 +3,19 @@
 ---
 
 ## 1. Pregunta Principal del Proyecto
-
+<details>
+<summary>Ver</summary>
 ¿Qué zona del municipio de Monterrey presenta mayor potencial para abrir un restaurante de boneless rentable, considerando factores como:
 
 - Afluencia de personas  
 - Competencia  
 - Nivel socioeconómico  
-
 ---
+</details>
+
+## 2. Justificación de la Pregunta
 <details>
-<summary>## 2. Justificación de la Pregunta</summary>
+<summary>Ver</summary>
 
 ### 2.1 Importancia crítica de la ubicación
 
@@ -34,9 +37,11 @@ La concentración geográfica de clientes y negocios permite identificar:
 - Oportunidades de mercado  
 
 ---
+</details>
 
 ## 3. Importancia de cada factor
-
+<details>
+<summary>Ver</summary>
 ---
 
 ### 3.1 Afluencia (demanda o flujo de personas)
@@ -82,8 +87,11 @@ Conclusión:
 El nivel socioeconómico determina la viabilidad económica del negocio.
 
 ---
+</details>
 
 ## 4. Análisis integral
+<details>
+<summary>Ver</summary>
 
 Los factores deben analizarse de manera conjunta, ya que cada uno aporta una perspectiva diferente sobre el potencial comercial de una ubicación:
 
@@ -114,9 +122,11 @@ Conclusión:
 El uso combinado de los factores de afluencia, competencia y nivel socioeconómico, soportado por una arquitectura de datos basada en **Star Schema**, permite transformar la selección de ubicación en un proceso objetivo y fundamentado en evidencia. La integración de las dimensiones **DIM_ACTPOI**, **DIM_NSE** y **DIM_COMPETENCIA** proporciona una visión integral del entorno comercial de cada AGEB, permitiendo identificar aquellas zonas con mejores condiciones para la instalación y operación de un restaurante de boneless.
 
 ---
+</details>
 
 ## 5. Reglas de Negocio
-
+<details>
+<summary>Ver</summary>
 Las siguientes reglas de negocio establecen los criterios utilizados para identificar las zonas con mayor potencial para la apertura de un restaurante de boneless en el municipio de Monterrey, Nuevo León.
 
 ### RN-01: Mercado Objetivo
@@ -205,8 +215,11 @@ El resultado esperado será un ranking de las zonas con mayor potencial para la 
 #### Justificación
 
 La generación de un ranking facilita la comparación objetiva entre ubicaciones y permite identificar las mejores oportunidades de negocio dentro del municipio de Monterrey.
+</details>
 
 ## 6. ETL de Nivel Socioeconómico (Construcción de DIM_NSE)
+<details>
+<summary>Ver</summary>
 
 Este proceso ETL tiene como objetivo construir la dimensión DIM_NSE, la cual será integrada al modelo dimensional tipo Star Schema utilizado para el análisis de potencial comercial.
 
@@ -303,9 +316,11 @@ Como resultado del proceso ETL se generó la dimensión DIM_NSE, destinada a rep
 
 La dimensión DIM_NSE se relacionará posteriormente con la tabla de hechos FACT_DENUE mediante el identificador geográfico AGEB, permitiendo incorporar indicadores socioeconómicos al proceso de evaluación de ubicaciones comerciales.
 
----
+</details>
 
 ## 7. Análisis de Puntos de Interés (ETL)
+<details>
+<summary>Ver</summary>
 
 Este proyecto utiliza información de Puntos de Interés (POI) obtenida del DENUE de INEGI para estimar la afluencia potencial de cada AGEB.
 
@@ -400,7 +415,7 @@ La estructura conceptual de la dimensión está compuesta por los siguientes atr
 - Peso de Influencia.
 
 La dimensión permite centralizar las reglas de clasificación y ponderación utilizadas para el cálculo del Score de Afluencia, evitando la duplicidad de información dentro de la tabla de hechos.
+</details>
 
 
-
-⚙️🔧 **Proyecto en construcción:** El desarrollo de este proyecto continúa en progreso y algunas funcionalidades, análisis y visualizaciones aún se encuentran en implementación.
+#Trabajo en proceso 
