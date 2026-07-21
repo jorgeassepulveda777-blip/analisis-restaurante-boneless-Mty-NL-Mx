@@ -318,7 +318,7 @@ La dimensión DIM_NSE se relacionará posteriormente con la tabla de hechos FACT
 
 </details>
 
-## 7. Análisis de Puntos de Interés (ETL)
+## 7. ETL de Puntos de Interés (Construcción de DIM_ACTPOI)
 <details>
 <summary>Ver</summary>
 
