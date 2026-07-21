@@ -418,4 +418,4 @@ La dimensión permite centralizar las reglas de clasificación y ponderación ut
 </details>
 
 
-#Trabajo en proceso 
+#⚙️🛠️⚙️Trabajo en proceso... 🛠️⚙️🛠️
