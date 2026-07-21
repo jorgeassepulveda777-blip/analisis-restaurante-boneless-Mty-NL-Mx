@@ -37,6 +37,7 @@ La concentración geográfica de clientes y negocios permite identificar:
 
 ## 3. Importancia de cada factor
 
+---
 
 ### 3.1 Afluencia (demanda o flujo de personas)
 
@@ -44,19 +45,19 @@ El flujo de personas determina el tamaño del mercado disponible para un restaur
 
 Por esta razón, la afluencia constituye uno de los factores principales para evaluar el potencial comercial de una ubicación.
 
-### Medición de la afluencia
+#### Medición de la afluencia
 
 Debido a la disponibilidad limitada de datos de tráfico peatonal real a nivel AGEB, la afluencia será estimada mediante la presencia de Puntos de Interés (POI) identificados dentro de cada zona geográfica.
 
 Estos elementos actúan como generadores de movilidad y concentración de población, incrementando el potencial de consumo dentro de una determinada AGEB.
 
-### Ponderación de Puntos de Interés (POI Weighting)
+#### Ponderación de Puntos de Interés (POI Weighting)
 
 Con el objetivo de cuantificar la influencia de cada POI, se asigna una puntuación relativa a cada categoría de establecimiento.
 
+---
 
-
-## 3.2 Competencia 
+### 3.2 Competencia 
 
 La competencia representa la cantidad de negocios similares en una zona.
 
@@ -84,18 +85,33 @@ El nivel socioeconómico determina la viabilidad económica del negocio.
 
 ## 4. Análisis integral
 
-Los factores deben analizarse en conjunto:
+Los factores deben analizarse de manera conjunta, ya que cada uno aporta una perspectiva diferente sobre el potencial comercial de una ubicación:
 
-- Alta afluencia sin ingreso → bajo consumo  
-- Alto ingreso sin flujo → pocos clientes  
-- Alta competencia → menor participación  
+- Alta afluencia sin ingreso → bajo consumo potencial.
+- Alto ingreso sin flujo → menor captación de clientes.
+- Alta competencia → menor participación de mercado.
 
-El análisis conjunto reduce el riesgo y mejora la toma de decisiones.
+Para integrar estos factores dentro de un mismo entorno analítico, se implementó una arquitectura de modelado dimensional basada en la metodología **Star Schema (Modelo Estrella)**. Esta estructura permite organizar la información en tablas de hechos y dimensiones especializadas, facilitando la consolidación de indicadores provenientes de múltiples fuentes de datos y su posterior análisis geoespacial.
 
+Dentro del modelo, los registros de establecimientos económicos del DENUE constituyen la tabla de hechos principal (**FACT_DENUE**). Sobre esta tabla se integran diversas dimensiones analíticas que proporcionan contexto y atributos de evaluación para cada AGEB:
 
+- **DIM_ACTPOI**, utilizada para clasificar las actividades económicas e incorporar los pesos de afluencia asociados a cada categoría de Punto de Interés (POI).
+- **DIM_NSE**, construida a partir de la información socioeconómica obtenida de AMAI, permitiendo caracterizar la capacidad de consumo de la población presente en cada AGEB.
+- **DIM_COMPETENCIA**, destinada a evaluar la concentración de negocios competidores dentro de zonas que cumplan criterios específicos de proximidad y cobertura, permitiendo identificar niveles de saturación comercial.
+
+La combinación de estas dimensiones permite enriquecer el análisis de cada área geoestadística desde múltiples perspectivas, integrando variables de generación de demanda, capacidad de consumo y presión competitiva dentro de una misma arquitectura de datos.
+
+Esta metodología facilita la construcción de indicadores agregados, la segmentación territorial y la comparación objetiva entre AGEB, reduciendo la subjetividad inherente a los procesos tradicionales de selección de ubicaciones comerciales.
+
+El análisis conjunto reduce el riesgo y mejora la calidad de la toma de decisiones.
+
+![StarScham](images/DIMStarschem.png)
+
+<br><br>
 Conclusión:
+<br><br>
 
-El uso combinado de los factores permite transformar la selección de ubicación en un proceso basado en datos.
+El uso combinado de los factores de afluencia, competencia y nivel socioeconómico, soportado por una arquitectura de datos basada en **Star Schema**, permite transformar la selección de ubicación en un proceso objetivo y fundamentado en evidencia. La integración de las dimensiones **DIM_ACTPOI**, **DIM_NSE** y **DIM_COMPETENCIA** proporciona una visión integral del entorno comercial de cada AGEB, permitiendo identificar aquellas zonas con mejores condiciones para la instalación y operación de un restaurante de boneless.
 
 ---
 
@@ -138,11 +154,7 @@ Estas zonas no representan el mercado objetivo prioritario definido para el proy
 Las AGEB que presenten una mayor concentración de puntos generadores de afluencia recibirán una puntuación superior dentro del modelo de evaluación.
 
 Se consideran los siguientes generadores de afluencia:
-
-- Escuelas
-- Universidades
-- Hospitales
-- Centros comerciales
+![Pondracion](images/Pondera_POI.png)
 
 #### Justificación
 
@@ -150,23 +162,9 @@ La presencia de estos establecimientos incrementa la movilidad de personas y el 
 
 ---
 
-### RN-04: Priorización del perfil de cliente objetivo
 
-Dentro de los generadores de afluencia, se otorgará mayor relevancia a:
 
-- Centros comerciales
-- Universidades
-- Escuelas
-
-respecto a los hospitales.
-
-#### Justificación
-
-El mercado objetivo de un restaurante de boneless está compuesto principalmente por jóvenes y adultos jóvenes que realizan actividades recreativas, sociales y de consumo. Las universidades, escuelas y centros comerciales concentran una mayor proporción de este perfil de consumidor.
-
----
-
-### RN-05: Penalización por competencia
+### RN-04: Penalización por competencia
 
 Las AGEB que presenten una alta concentración de establecimientos similares recibirán una menor puntuación dentro del modelo de evaluación.
 
@@ -184,7 +182,7 @@ Una mayor presencia de competidores reduce la participación potencial de mercad
 
 ---
 
-### RN-06: Evaluación integral de ubicación
+### RN-05: Evaluación integral de ubicación
 
 La recomendación final de ubicación no dependerá de una única variable, sino de la combinación de:
 
@@ -198,7 +196,7 @@ La evaluación conjunta permite reducir el riesgo de seleccionar zonas con alto 
 
 ---
 
-### RN-07: Ranking de zonas potenciales
+### RN-06: Ranking de zonas potenciales
 
 Las AGEB analizadas serán ordenadas de acuerdo con una puntuación final obtenida a partir de los criterios definidos en el proyecto.
 
@@ -208,14 +206,13 @@ El resultado esperado será un ranking de las zonas con mayor potencial para la 
 
 La generación de un ranking facilita la comparación objetiva entre ubicaciones y permite identificar las mejores oportunidades de negocio dentro del municipio de Monterrey.
 
-## 6. Análisis de Nivel Socioeconómico (ETL)
+## 6. ETL de Nivel Socioeconómico (Construcción de DIM_NSE)
 
-Este proyecto incorpora datos reales de nivel socioeconómico mediante un proceso ETL.
+Este proceso ETL tiene como objetivo construir la dimensión DIM_NSE, la cual será integrada al modelo dimensional tipo Star Schema utilizado para el análisis de potencial comercial.
 
 ---
 
-
-## 6.1 Fuente de datos
+### 6.1 Fuente de datos
 
 Datos obtenidos de:
 
@@ -234,9 +231,9 @@ Nivel de detalle:
 
 ---
 
-## 6.2 Flujo de trabajo (ETL)
+### 6.2 Flujo de trabajo (ETL)
 
-### Extract (Obtención)
+#### Extract (Obtención)
 
 Datos descargados en formato Shapefile:
 
@@ -244,9 +241,9 @@ Datos descargados en formato Shapefile:
 - .dbf → atributos  
 - .shx → índice  
 
----
 
-### Transform (Python)
+
+#### Transform (Python)
 
 Se extrajeron los datos del archivo .dbf y se convirtieron a formato CSV utilizando Python.
 
@@ -256,15 +253,15 @@ Resultado:
 - Conversión de DBF a CSV  
 - Preparación de datos para análisis en Power BI  
 
----
 
-### Load (Power BI)
+
+#### Load (Power BI)
 
 El archivo CSV fue importado en Power BI para su análisis.
 
----
 
-### Transform (Power BI / Power Query)
+
+#### Transform (Power BI / Power Query)
 
 En Power BI se realizó la limpieza y transformación de datos, incluyendo:
 
@@ -279,27 +276,46 @@ Resultado:
 
 ---
 
-## 6.3 Visualización preliminar de NSE en Power BI
+### 6.3 Visualización preliminar de NSE en Power BI
 
 Como resultado del proceso de limpieza y transformación de datos, se generaron visualizaciones iniciales para explorar el nivel socioeconómico por municipio.
 
-### Distribución del nivel socioeconómico por municipio
+#### Distribución del nivel socioeconómico por municipio
 
 ![Distribución del nivel socioeconómico](images/PBI_NSE.png)
 
 Esta visualización muestra la distribución de los niveles socioeconómicos por municipio, permitiendo identificar las zonas con mayor presencia de niveles medios y altos, lo cual es clave para evaluar el potencial de consumo en el análisis de ubicación del restaurante.
 
-# 7. Análisis de Puntos de Interés (ETL)
+---
 
-Este proyecto incorpora información de Puntos de Interés (POI) obtenida del Directorio Estadístico Nacional de Unidades Económicas (DENUE) de INEGI.
+### 6.4 Resultado de la transformación
 
-El objetivo es identificar establecimientos con capacidad de generar una "afluencia" potencial de personas y utilizarlos como una aproximación al potencial comercial de cada AGEB.
+Como resultado del proceso ETL se generó la dimensión DIM_NSE, destinada a representar las características socioeconómicas de cada AGEB dentro del modelo analítico.
 
-> **Nota:** En este proyecto el término "afluencia" hace referencia a una estimación indirecta del potencial de concentración de personas dentro de una AGEB, calculada a partir de la presencia y ponderación de Puntos de Interés (POI). No corresponde a una medición directa de tráfico peatonal.
+#### Estructura conceptual
+
+- AGEB
+- Nivel AMAI
+- Nivel Socioeconómico (NSE)
+- Ingreso Promedio
+- Índice de Consumo
+- Variables complementarias
+
+La dimensión DIM_NSE se relacionará posteriormente con la tabla de hechos FACT_DENUE mediante el identificador geográfico AGEB, permitiendo incorporar indicadores socioeconómicos al proceso de evaluación de ubicaciones comerciales.
 
 ---
 
-## 7.1 Fuente de datos
+## 7. Análisis de Puntos de Interés (ETL)
+
+Este proyecto utiliza información de Puntos de Interés (POI) obtenida del DENUE de INEGI para estimar la afluencia potencial de cada AGEB.
+
+Mediante este proceso ETL se construye la dimensión **DIM_ACTPOI**, integrada al modelo **Star Schema** del proyecto, la cual permite clasificar y ponderar actividades económicas según su capacidad para generar concentración de personas.
+
+> **Nota:** La afluencia corresponde a una estimación basada en la presencia y ponderación de Puntos de Interés (POI), no a una medición directa del flujo peatonal.
+
+---
+
+### 7.1 Fuente de datos
 
 Datos obtenidos de:
 
@@ -323,9 +339,9 @@ El DENUE proporciona información de establecimientos económicos registrados en
 
 ---
 
-## 7.2 Flujo de trabajo (ETL)
+### 7.2 Flujo de trabajo (ETL)
 
-### Extract (Obtención)
+#### Extract (Obtención)
 
 Se descargó la base de datos del DENUE correspondiente al área geográfica de estudio.
 
@@ -343,20 +359,48 @@ Las variables utilizadas fueron:
 
 ---
 
-### Transform (Selección de POI)
+#### Transform (Construcción de DIM_ACTPOI)
 
-Como etapa previa a la asignación de ponderaciones, los datos del DENUE fueron procesados en Power Query para depurar registros y extraer una tabla de referencia compuesta por los códigos SCIAN y sus respectivas actividades económicas.
+ 
+Como parte del proceso de transformación de datos para el análisis de afluencia comercial, fue necesario establecer un mecanismo que permitiera clasificar las actividades económicas registradas en el Directorio Estadístico Nacional de Unidades Económicas (DENUE) de acuerdo con su capacidad potencial para generar flujo de personas. Para ello, se adoptó una metodología basada en un **modelo dimensional tipo estrella**, cuyo objetivo es facilitar el análisis y la agregación de información dentro del entorno de inteligencia de negocios.
 
-
-Esta tabla permitió identificar y separar las actividades presentes en la base de datos, facilitando su análisis posterior.
+ 
+En una primera etapa, se elaboró un catálogo de actividades económicas en Microsoft Excel, utilizando como insumo los códigos de actividad económica presentes en los registros del DENUE. Cada actividad fue analizada y clasificada de acuerdo con su relevancia para la generación de afluencia comercial en el contexto del estudio. Como resultado, se asignó un **Código POI (Point of Interest)** que representa la categoría funcional a la que pertenece cada actividad económica.
 
 ![seleccion para POIPQ1](images/Sel_Tab_pesoCatP1.png)
 ![seleccion para POIPQ2](images/Sel_Tab_PesoCatP2.png)
+![asigrnacion codigo POI](images/DimensionPe_POIACT/CatalogoPOI_1.png)
+![asigrnacion codigo POI2](images/DimensionPe_POIACT/CatalogoPOI_2.png)
+![asigrnacion codigo POI3](images/DimensionPe_POIACT/CatalogoPOI_3.png)
+ 
+Posteriormente, se desarrolló un catálogo independiente de categorías POI, el cual contiene la clasificación de los puntos de interés identificados, así como el peso o nivel de influencia asignado a cada categoría. Dichos pesos fueron definidos conforme a las reglas de negocio establecidas para el proyecto y representan la importancia relativa de cada tipo de establecimiento como generador potencial de demanda comercial.
+
+![CAtalogoPOI](images/DimensionPe_POIACT/CatalogoPOI_4.png)
+ 
+Una vez definidos ambos catálogos, se procedió a realizar el proceso de homologación de datos mediante **Power Query**, utilizando el Código POI como llave de relación. A través de una operación de combinación de consultas (*Merge Queries*), se integró la información de clasificación y ponderación dentro de una única estructura dimensional.
+
+![Homologacion1](images/DimensionPe_POIACT/Homologacion_1.png)
+![Homologacion2](images/DimensionPe_POIACT/Homologacion_2.png)
+![Homologacion3](images/DimensionPe_POIACT/Homologacion_3.png)
+ 
+Como resultado de este proceso se generó la dimensión **DIM_ACTPOI**, la cual concentra la información necesaria para clasificar y ponderar las actividades económicas dentro del modelo analítico.
 
 
-**Resultado:**
+
+### Estructura conceptual de DIM_ACTPOI
+
+Como resultado del proceso de homologación se generó la dimensión DIM_ACTPOI, diseñada para almacenar la clasificación de las actividades económicas y sus respectivos factores de ponderación.
+
+La estructura conceptual de la dimensión está compuesta por los siguientes atributos:
+
+- Código de Actividad Económica.
+- Descripción de la Actividad.
+- Código POI.
+- Categoría POI.
+- Peso de Influencia.
+
+La dimensión permite centralizar las reglas de clasificación y ponderación utilizadas para el cálculo del Score de Afluencia, evitando la duplicidad de información dentro de la tabla de hechos.
 
 
-- Generación de una tabla depurada de actividades económicas basada en códigos SCIAN, utilizada como base para la selección y ponderación de los POI del análisis.
 
 ⚙️🔧 **Proyecto en construcción:** El desarrollo de este proyecto continúa en progreso y algunas funcionalidades, análisis y visualizaciones aún se encuentran en implementación.
