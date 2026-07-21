@@ -11,8 +11,8 @@
 - Nivel socioeconómico  
 
 ---
-
-## 2. Justificación de la Pregunta
+<details>
+<summary>## 2. Justificación de la Pregunta</summary>
 
 ### 2.1 Importancia crítica de la ubicación
 
